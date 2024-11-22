@@ -40,8 +40,10 @@ $(NAME_BONUS): $(GNL_B_OBJ) $(TEST_B_OBJ)
 	@$(CC) $(CFLAGS) $(GNL_B_OBJ) $(TEST_B_OBJ) -o $@
 
 m: $(NAME)
+mandatory: $(NAME)
 
 b: $(NAME_BONUS)
+bonus: $(NAME_BONUS)
 
 clean:
 	@rm -f $(GNL_M_OBJ) $(GNL_B_OBJ) $(TEST_M_OBJ) $(TEST_B_OBJ)

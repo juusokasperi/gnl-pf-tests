@@ -21,6 +21,13 @@ void	test_others(void)
 	printf("- TESTING PERCENT, INVALID FLAGS, EMPTY FORMAT ETC -\n");
 	printf("--------------------------------------------------\n%s", KNRM);
 
+	int	i = 5;
+	printf("PF:\n");
+	ret = printf("%c\t%s\t%p\t%d\t%i\t%u\t%x\t%X\t%%\n", 'A', "Test", &i, 0x28, 0x28, 50, 50);
+	printf("FT:\n");
+	ret_ft = ft_printf("%c\t%s\t%p\t%d\t%i\t%u\t%x\t%X\t%%\n", 'A', "Test", &i, 0x28, 0x28, 50, 50);
+	cmp(ret, ret_ft);
+
 	ret = printf("PF: %7ysa%7");
 	printf("\n");
 	ret_ft = ft_printf("FT: %7ysa%7");

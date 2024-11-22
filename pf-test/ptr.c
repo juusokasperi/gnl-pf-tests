@@ -6,7 +6,7 @@
 /*   By: jrinta- <jrinta-@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 15:44:26 by jrinta-           #+#    #+#             */
-/*   Updated: 2024/11/14 10:51:57 by jrinta-          ###   ########.fr       */
+/*   Updated: 2024/11/22 16:55:07 by jrinta-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	test_ptr(void)
 	ret_ft = ft_printf("FT: %p\n", p);
 	cmp(ret, ret_ft);
 
-	printf("%s-------------------\nTest w 64-bit ptr%s\n", KBLU, KNRM);
+	printf("%s-------------------\nTest w 64-bit ptr%s\n", KCYN, KNRM);
 	ret = printf("PF: %p\n", p2);
 	ret_ft = ft_printf("FT: %p\n", p2);
 	cmp(ret, ret_ft);

@@ -6,7 +6,7 @@
 /*   By: jrinta- <jrinta-@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:30:28 by jrinta-           #+#    #+#             */
-/*   Updated: 2024/11/18 14:50:15 by jrinta-          ###   ########.fr       */
+/*   Updated: 2024/11/22 16:37:50 by jrinta-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	cmp(int ret, int ret_ft)
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2 || ft_strlen(argv[1]) != 1)
+	if (argc != 2 || strlen(argv[1]) != 1)
 		return (ft_printf("Usage: ./test <i d, u, s, c, p, x, X, o (for others)>\n"));
 	if (argv[1][0] == 'i' || argv[1][0] == 'd')
 		test_int();

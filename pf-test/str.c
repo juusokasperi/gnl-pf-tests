@@ -6,7 +6,7 @@
 /*   By: jrinta- <jrinta-@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 15:44:26 by jrinta-           #+#    #+#             */
-/*   Updated: 2024/11/18 14:48:07 by jrinta-          ###   ########.fr       */
+/*   Updated: 2024/11/22 16:55:10 by jrinta-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	test_str(void)
 	ret_ft = ft_printf("FT: %s\n", str);
 	cmp(ret, ret_ft);
 
-	printf("%s--------------------\nUnprintables\n%s", KBLU, KNRM);
+	printf("%s--------------------\nUnprintables\n%s", KCYN, KNRM);
 	ret = printf("PF: \001\002\007\v\010\f\r\n");
 	ret_ft = ft_printf("FT: \001\002\007\v\010\f\r\n");
 	cmp(ret, ret_ft);

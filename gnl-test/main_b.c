@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrinta- <jrinta-@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 18:58:03 by jrinta-           #+#    #+#             */
-/*   Updated: 2024/11/20 14:31:47 by jrinta-          ###   ########.fr       */
+/*   Updated: 2024/11/22 12:38:57 by jrinta-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../get_next_line_bonus.h"
 #include "string.h"
@@ -102,7 +103,7 @@ int	main(int argc, char **argv)
 		printf("-----       Usage:       -----\n%s", KNRM);
 		printf("%s------------------------------\n", KYEL);
 
-		printf("%s <file(s)_to_read>\t// Reads the given file, if compiled with bonus works up to 3 files\n", argv[0]);
+		printf("%s <file(s)_to_read>\t// Reads the given file, works up to 3 files\n", argv[0]);
 		printf("%s inv\t\t\t// Attempts to read an invalid file descriptor\n", argv[0]);
 		printf("%s inv bonus\t\t// Reads two existing files in addition to an invalid file descriptor\n", argv[0]);
 		printf("%s stdin\t\t\t// Reads from std input\n\n", argv[0]);
@@ -110,8 +111,8 @@ int	main(int argc, char **argv)
 		printf("%s------------------------------\n", KYEL);
 		printf("%s- Some files to try reading: -\n%s", KYEL, KNRM);
 		printf("%s------------------------------\n", KYEL);
-		printf("test/multiple_long_lines.txt test/multiple_short_lines.txt test/multiple_empty_lines.txt\n");
-		printf("test/empty.txt test/giant_line.txt test/giant_line_nl.txt\n");
+		printf("multiple_long_lines.txt multiple_short_lines.txt multiple_empty_lines.txt\n");
+		printf("empty.txt giant_line.txt giant_line_nl.txt\n");
 		printf("%s------------------------------\n%s", KYEL, KNRM);
 		return (1);
 	}
@@ -129,8 +130,8 @@ int	main(int argc, char **argv)
 		if (ft_strncmp(argv[1], "inv", 3) == 0&& strlen(argv[1]) == 3
 			&& ft_strncmp(argv[2], "bonus", 5) == 0 && strlen(argv[2]) == 5)
 			{
-				int fd = open("test/multiple_long_lines.txt", O_RDONLY);
-				int fd_2 = open("test/multiple_short_lines.txt", O_RDONLY);
+				int fd = open("multiple_long_lines.txt", O_RDONLY);
+				int fd_2 = open("multiple_short_lines.txt", O_RDONLY);
 				return (test_gnl_bonus_3(fd, fd_2, 42));
 			}
 		else
@@ -148,5 +149,5 @@ int	main(int argc, char **argv)
 		return (test_gnl_bonus_3(fd, fd_2, fd_3));
 	}
 	else
-		return (printf("Error.\n"));
+		return (printf("Error: Too many aruments. Read instructions by running \"%s\".\n", argv[0]));
 }

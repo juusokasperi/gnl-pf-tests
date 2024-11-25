@@ -27,17 +27,19 @@ ENDCOLOR = \033[0m
 NAME := test
 NAME_BONUS := test_bonus
 
+BUFFER_SIZE ?= 42
+
 all: $(NAME)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -c $< -o $@
 
 $(NAME): $(GNL_M_OBJ) $(TEST_M_OBJ)
-	@$(CC) $(CFLAGS) $(GNL_M_OBJ) $(TEST_M_OBJ) -o $@
+	$(CC) $(CFLAGS) $(GNL_M_OBJ) $(TEST_M_OBJ) -o $@
 	@rm -f $(GNL_M_OBJ) $(GNL_B_OBJ)
 
 $(NAME_BONUS): $(GNL_B_OBJ) $(TEST_B_OBJ)
-	@$(CC) $(CFLAGS) $(GNL_B_OBJ) $(TEST_B_OBJ) -o $@
+	$(CC) $(CFLAGS) $(GNL_B_OBJ) $(TEST_B_OBJ) -o $@
 
 m: $(NAME)
 mandatory: $(NAME)
